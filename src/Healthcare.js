@@ -14,115 +14,118 @@ const Healthcare = () => {
 
 
     const [providerAddress, setProviderAddress] = useState("");
-    const contractAddress = "0x6348995a1972d426b6a7c053fd17a86b243c9d2b";
+    const contractAddress = "0x1323f33bc6bed0d52321c4b76c065842dec42206";
+    // 0x1323f33Bc6bEd0D52321C4b76c065842DEc42206
 
-    const contractABI = [
-        {
-            "inputs": [],
-            "stateMutability": "nonpayable",
-            "type": "constructor"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "patientID",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "string",
-                    "name": "patientName",
-                    "type": "string"
-                },
-                {
-                    "internalType": "string",
-                    "name": "diagnosis",
-                    "type": "string"
-                },
-                {
-                    "internalType": "string",
-                    "name": "treatment",
-                    "type": "string"
-                }
-            ],
-            "name": "addRecord",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "provider",
-                    "type": "address"
-                }
-            ],
-            "name": "authorizeProvider",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "getOwner",
-            "outputs": [
-                {
-                    "internalType": "address",
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "patientID",
-                    "type": "uint256"
-                }
-            ],
-            "name": "getPatientRecords",
-            "outputs": [
-                {
-                    "components": [
-                        {
-                            "internalType": "uint256",
-                            "name": "recordID",
-                            "type": "uint256"
-                        },
-                        {
-                            "internalType": "string",
-                            "name": "patientName",
-                            "type": "string"
-                        },
-                        {
-                            "internalType": "string",
-                            "name": "diagnosis",
-                            "type": "string"
-                        },
-                        {
-                            "internalType": "string",
-                            "name": "treatment",
-                            "type": "string"
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "timestamp",
-                            "type": "uint256"
-                        }
-                    ],
-                    "internalType": "struct HealthcareRecords.Record[]",
-                    "name": "",
-                    "type": "tuple[]"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        }
-    ];
+    const contractABI = 
+        [
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "patientID",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "patientName",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "diagnosis",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "treatment",
+                        "type": "string"
+                    }
+                ],
+                "name": "addRecord",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "provider",
+                        "type": "address"
+                    }
+                ],
+                "name": "authorizeProvider",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "stateMutability": "nonpayable",
+                "type": "constructor"
+            },
+            {
+                "inputs": [],
+                "name": "getOwner",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "patientID",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getPatientRecords",
+                "outputs": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "uint256",
+                                "name": "recordID",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "patientName",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "diagnosis",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "treatment",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "timestamp",
+                                "type": "uint256"
+                            }
+                        ],
+                        "internalType": "struct Healthcare.Record[]",
+                        "name": "",
+                        "type": "tuple[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ]
+    ;
 
     useEffect(() => {
         const connectWallet = async () => {
